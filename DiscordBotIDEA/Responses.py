@@ -12,11 +12,11 @@ def messsrespond(message) -> str:
         return 'I know where you live'
     
     if any(word in offensive_words for word in y):
-        return True
+        return "bad message"
     if message != 0:
         x = random.randint(1,9)
         if x ==  1:
-            return 'suck on my cock'
+            return 'no'
         else:
             pass
         

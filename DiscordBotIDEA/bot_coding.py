@@ -31,7 +31,14 @@ async def send_message(message, user_message, is_private):
             if is_private:
                 await message.author.send(response)  
             else:
-                await message.channel.send(response)
+                try:
+                    if Responses.messsrespond(user_message) == True:
+                        await message.delete()
+                        await message.channel.send("No")
+                    else:
+                        await send_message(message, user_message, is_private=False)
+                except Exception as e:
+                    print(e)
     except Exception as e:
         print(e)
 
